@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Times World Co-Operative Common Service Society</title>
+<style>
+:root{--red:#c62828;--gold:#f4b400;--blue:#173b70;--cream:#fff8ed;--dark:#17202a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f6f7fb;color:var(--dark)}
+header{background:linear-gradient(135deg,#8d1616,#d52b2b 55%,#f4b400);color:white;position:sticky;top:0;z-index:10;box-shadow:0 4px 18px #0002}
+.nav{max-width:1180px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px}.logo-mark{width:48px;height:48px;border-radius:14px;background:#fff;color:var(--red);display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 5px 12px #0002}
+.logo b{display:block;font-size:17px}.logo small{opacity:.9}nav{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}nav a{color:#fff;text-decoration:none;padding:9px 11px;border-radius:9px;font-weight:700;font-size:13px}nav a:hover{background:#ffffff2b}
+.hero{background:linear-gradient(120deg,#fff4df,#fff 48%,#ffe9e9);padding:65px 20px}.hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}
+.badge{display:inline-block;background:#ffe0a3;color:#7a3f00;padding:7px 12px;border-radius:999px;font-weight:800;font-size:12px}
+h1{font-size:clamp(32px,5vw,58px);line-height:1.05;margin:15px 0;color:#7f1717}h2{font-size:30px;margin:0 0 10px}.hero p{font-size:17px;line-height:1.7;color:#566}
+.hero-card{background:#fff;border-radius:24px;padding:28px;box-shadow:0 15px 45px #8d161622;border-top:6px solid var(--gold)}
+.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.quick div{padding:16px;border-radius:15px;background:#fff7e6}.quick strong{display:block;color:var(--red);font-size:20px}
+.container{max-width:1180px;margin:auto;padding:55px 20px}.section-head{display:flex;justify-content:space-between;gap:15px;align-items:end;margin-bottom:22px}.muted{color:#697386}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border-radius:18px;padding:22px;box-shadow:0 8px 25px #16213d0d;border:1px solid #e8eaf0}.card h3{margin:5px 0 8px}.tag{display:inline-block;padding:5px 9px;border-radius:8px;background:#edf3ff;color:#2454a6;font-size:12px;font-weight:800}
+.notice{border-left:5px solid var(--red)}.event{border-top:5px solid var(--gold)}.photo{overflow:hidden;padding:0}.photo img{width:100%;height:190px;object-fit:cover;background:#eee}.photo .pad{padding:16px}
+form{display:grid;gap:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}input,textarea,select{width:100%;padding:12px 13px;border:1px solid #d9dce5;border-radius:10px;font:inherit;background:#fff}textarea{min-height:110px;resize:vertical}button{border:0;border-radius:10px;padding:12px 16px;background:var(--red);color:white;font-weight:800;cursor:pointer}button.secondary{background:#173b70}button.gold{background:#d69200}
+.admin{background:linear-gradient(135deg,#172f57,#254e86);color:white}.admin .card{color:var(--dark)}
+.contact{background:#fff4df}.contact-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}.contact-item{background:white;padding:20px;border-radius:15px}.contact-item a{color:var(--red);font-weight:800;text-decoration:none}
+footer{background:#101722;color:#cbd3df;padding:35px 20px}.footer-inner{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-title{color:#fff;font-weight:900}
+.empty{text-align:center;color:#8a93a3;padding:25px;border:2px dashed #dce0e8;border-radius:15px}
+#toast{position:fixed;right:20px;bottom:20px;background:#17202a;color:#fff;padding:13px 18px;border-radius:10px;display:none;z-index:30}
+@media(max-width:850px){.hero-inner,.contact-box{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.nav{align-items:flex-start}.hero{padding-top:40px}}
+@media(max-width:560px){.grid,.two,.quick{grid-template-columns:1fr}nav{display:none}.logo b{font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<div class="logo"><div class="logo-mark">TW</div><div><b>Times World</b><small>Co-Operative Common Service Society</small></div></div>
+<nav><a href="#home">Home</a><a href="#notices">Notices</a><a href="#meetings">Meetings</a><a href="#festivals">Festivals</a><a href="#gallery">Gallery</a><a href="#committee">Committee</a><a href="#contact">Contact</a><a href="#admin">Manage</a></nav>
+</div></header>
+
+<section class="hero" id="home"><div class="hero-inner">
+<div><span class="badge">TIMES WORLD • ALTHAN • SURAT</span><h1>One Complex.<br>One Community.</h1>
+<p>A colourful digital notice board and community portal for Times World Complex — connecting shop owners, tenants, hotel operators, committee members and management.</p>
+<a href="#notices"><button>View Latest Notices</button></a> <a href="#admin"><button class="gold">Add Information</button></a></div>
+<div class="hero-card"><h2>Community Hub</h2><p class="muted">Everything important in one place.</p><div class="quick">
+<div><strong id="noticeCount">0</strong>Notices</div><div><strong id="eventCount">0</strong>Events</div><div><strong id="photoCount">0</strong>Photos</div><div><strong>24×7</strong>Access</div></div></div>
+</div></section>
+
+<section class="container" id="notices"><div class="section-head"><div><h2>📢 Latest Notices</h2><div class="muted">Important information for Times World members.</div></div></div><div id="noticeList" class="grid"></div></section>
+
+<section class="container" id="meetings" style="background:#f0f5ff;max-width:none"><div style="max-width:1140px;margin:auto"><div class="section-head"><div><h2>🗓️ Meetings & Information</h2><div class="muted">Committee meetings, decisions and announcements.</div></div></div><div id="eventList" class="grid"></div></div></section>
+
+<section class="container" id="festivals"><div class="section-head"><div><h2>🪔 Festivals & Celebrations</h2><div class="muted">Community celebrations such as Ganesh Utsav and other festivals.</div></div></div><div id="festivalList" class="grid"></div></section>
+
+<section class="container" id="gallery" style="background:#fffaf0;max-width:none"><div style="max-width:1140px;margin:auto"><div class="section-head"><div><h2>📸 Community Gallery</h2><div class="muted">Photos from meetings, festivals and society activities.</div></div></div><div id="galleryList" class="grid"></div></div></section>
+
+<section class="container admin" id="admin"><div class="section-head"><div><h2>⚙️ Society Information Manager</h2><div style="opacity:.8">Add notices, meetings, festivals and photos directly from this website.</div></div></div>
+<div class="grid">
+<div class="card"><h3>📢 Add Notice</h3><form id="noticeForm"><input id="nTitle" placeholder="Notice title" required><select id="nType"><option>General Notice</option><option>Maintenance</option><option>Meeting</option><option>Safety</option><option>Important</option></select><textarea id="nText" placeholder="Write notice / information..." required></textarea><button>Publish Notice</button></form></div>
+<div class="card"><h3>🗓️ Add Meeting / Event</h3><form id="eventForm"><input id="eTitle" placeholder="Meeting / event title" required><div class="two"><input id="eDate" type="date" required><input id="eTime" type="time"></div><textarea id="eText" placeholder="Details, venue, agenda..."></textarea><select id="eCategory"><option>Meeting</option><option>Festival</option><option>Community Event</option></select><button class="secondary">Add Event</button></form></div>
+<div class="card"><h3>📷 Upload Photo</h3><form id="photoForm"><input id="pTitle" placeholder="Photo title" required><input id="pFile" type="file" accept="image/*" required><button class="gold">Add to Gallery</button></form><p class="muted" style="font-size:12px">Photos are stored in this browser in this demo version.</p></div>
+</div></section>
+
+<section class="container" id="committee"><div class="section-head"><div><h2>👥 Committee & Management</h2><div class="muted">The committee can update names and roles through the website manager.</div></div></div>
+<div class="grid">
+<div class="card"><span class="tag">Leadership</span><h3>Pramukh</h3><p class="muted">Society Committee Head</p></div>
+<div class="card"><span class="tag">Committee</span><h3>Committee Members</h3><p class="muted">Members responsible for society coordination and decisions.</p></div>
+<div class="card"><span class="tag">Management</span><h3>Maintenance Supervisor / Manager</h3><p class="muted">Daily maintenance, coordination and common-area management.</p></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="container"><div class="section-head"><div><h2>📞 Contact Society</h2><div class="muted">For notices, maintenance matters, meetings and community coordination.</div></div></div>
+<div class="contact-box"><div class="contact-item"><b>📱 Phone</b><p><a href="tel:9875138684">9875138684</a></p></div><div class="contact-item"><b>✉️ Email</b><p><a href="mailto:timesworldalthan@gmail.com">timesworldalthan@gmail.com</a></p></div></div></div></section>
+
+<footer><div class="footer-inner"><div><div class="footer-title">Times World Co-Operative Common Service Society</div><div>Times World Complex • Althan, Surat, Gujarat</div></div><div>© <span id="year"></span> Times World Society</div></div></footer>
+<div id="toast"></div>
+
+<script>
+const key='timesWorldPortal_v1';
+const defaults={
+notices:[
+{title:'Welcome to Times World Community Portal',type:'Important',text:'This website is the digital information centre for Times World Complex. Committee notices, meetings, festivals and community photos can be published here.',date:'30 Aug 2026'}
+],
+events:[
+{title:'Ganesh Utsav 2026',date:'2026-09-01',time:'16:00',category:'Festival',text:'Community Ganesh Utsav programme and committee coordination. Please check the latest notice for final programme details.'},
+{title:'Society Committee Meeting',date:'2026-08-30',time:'16:00',category:'Meeting',text:'Meeting for Ganesh Utsav planning and common society matters.'}
+],photos:[]};
+let data=JSON.parse(localStorage.getItem(key)||'null')||defaults;
+function save(){localStorage.setItem(key,JSON.stringify(data));render();toast('Information published successfully.')}
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function render(){
+document.getElementById('noticeCount').textContent=data.notices.length;document.getElementById('eventCount').textContent=data.events.length;document.getElementById('photoCount').textContent=data.photos.length;
+document.getElementById('noticeList').innerHTML=data.notices.length?data.notices.slice().reverse().map(x=>`<article class="card notice"><span class="tag">${esc(x.type)}</span><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p><small class="muted">${esc(x.date||'')}</small></article>`).join(''):'<div class="empty">No notices published yet.</div>';
+document.getElementById('eventList').innerHTML=data.events.filter(x=>x.category!=='Festival').length?data.events.filter(x=>x.category!=='Festival').slice().reverse().map(x=>cardEvent(x)).join(''):'<div class="empty">No meetings added yet.</div>';
+document.getElementById('festivalList').innerHTML=data.events.filter(x=>x.category==='Festival').length?data.events.filter(x=>x.category==='Festival').slice().reverse().map(x=>cardEvent(x)).join(''):'<div class="empty">No festivals added yet.</div>';
+document.getElementById('galleryList').innerHTML=data.photos.length?data.photos.slice().reverse().map(x=>`<article class="card photo"><img src="${x.src}" alt="${esc(x.title)}"><div class="pad"><b>${esc(x.title)}</b></div></article>`).join(''):'<div class="empty">No photos uploaded yet. Use the manager above to add photos.</div>';
+}
+function cardEvent(x){return `<article class="card event"><span class="tag">${esc(x.category)}</span><h3>${esc(x.title)}</h3><p>${esc(x.text||'')}</p><b>📅 ${esc(x.date)} ${x.time?' • '+esc(x.time):''}</b></article>`}
+function toast(t){const x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2500)}
+document.getElementById('noticeForm').onsubmit=e=>{e.preventDefault();data.notices.push({title:nTitle.value,type:nType.value,text:nText.value,date:new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})});e.target.reset();save()};
+document.getElementById('eventForm').onsubmit=e=>{e.preventDefault();data.events.push({title:eTitle.value,date:eDate.value,time:eTime.value,text:eText.value,category:eCategory.value});e.target.reset();save()};
+document.getElementById('photoForm').onsubmit=e=>{e.preventDefault();const f=pFile.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{data.photos.push({title:pTitle.value,src:r.result});e.target.reset();save()};r.readAsDataURL(f)};
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
